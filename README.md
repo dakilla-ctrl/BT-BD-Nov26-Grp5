@@ -1,4 +1,5 @@
-# BeTechified Backend Development: Group 5 Express.js CRUD API Project (`BT-BD-Nov26-Grp5`)
+# BeTechified Backend Development: Group 5 Express.js CRUD API Project
+(`BT-BD-Nov26-Grp5`)
 
 **Project Lead:** Nathaniel | **Assistant Project Lead:** Wealth
 
