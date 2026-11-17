@@ -1,0 +1,27 @@
+{
+  "name": "bt-bd-nov26-grp5",
+  "version": "1.0.0",
+  "description": "**Project Lead:** Nathaniel | **Assistant Project Lead:** Wealth | **Routes Driver:** Babalaito",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dakilla-ctrl/BT-BD-Nov26-Grp5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dakilla-ctrl/BT-BD-Nov26-Grp5/issues"
+  },
+  "homepage": "https://github.com/dakilla-ctrl/BT-BD-Nov26-Grp5#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
