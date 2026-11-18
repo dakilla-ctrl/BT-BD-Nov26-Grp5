@@ -65,6 +65,36 @@ app.get('/completed', (req, res) =>{
 
 });
 
+//Update  existing task by ID
+
+app.put('/tasks/:id', (req, res) => {
+  const taskId = req.params.id;
+  const task = tasks.find(t => t.id === taskId);
+  const { title, description, status } = req.body;
+  
+  if(!task){
+    return res.status(404).json({message: "Not found"})
+  }
+
+  if (!title || typeof title !== 'string' || title.trim() === '') {
+    return res.status(400).json({
+      message: 'Title is required and must be a non-empty string',
+    });
+  }
+  
+  if (status && !["pending", "completed"].includes(status)){
+    return res.status(400).json({
+      message: "Status must be pending or completed!"
+    });
+  }
+
+  task.title = title.trim();
+  task.description = description ?? task.description;
+  task.status = status ?? task.status;
+
+  res.status(200).json({message: "Task updated successfully", task});
+})
+
 // --- ADD CRUDE ROUTES BELOW ---
 
 app.listen(PORT, () => {
