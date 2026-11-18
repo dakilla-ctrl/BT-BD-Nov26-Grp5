@@ -6,10 +6,11 @@ app.use(express.json());
 
 // In-memory data store matching our README Task schema
 let tasks=[
-{id:"1", title:"Learn Express",description:"study routes and middleware", status:"pending"},
-{id:"2", title:"Build the API", description:"write the CRUD routes", Status:"pending"},
+{id:"1", title:"Learn Express",description:"study routes and middleware", status:"completed"},
+{id:"2", title:"Build the API", description:"write the CRUD routes", status:"pending"},
 {id:"3", title:"Record the demo", description:"make a 3 to 5 minute video", status:"pending"},
 ];
+let nextId =4;
 // Health-check route
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Task Manager API is running' });
