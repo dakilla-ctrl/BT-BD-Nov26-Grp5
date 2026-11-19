@@ -41,6 +41,12 @@ app.post('/tasks', (req, res) => {
   res.status(201).json(newTask);
 });
 
+//Get All available task
+app.get('/tasks/completed', (req, res) =>{
+  const completedTasks = tasks.filter(task => task.status === "completed");
+  res.status(200).json(completedTasks);
+
+});
 
 // Get task by ID
 app.get('/tasks/:id', (req, res) => {
@@ -55,14 +61,6 @@ app.get('/tasks/:id', (req, res) => {
 // Get all Available tasks
 app.get('/tasks', (req, res) => {
   res.status(200).json(tasks);
-});
-
-//Get All available tasks
-
-app.get('/completed', (req, res) =>{
-  const completedTasks = tasks.filter(task => task.status === "completed");
-  res.status(200).json(completedTasks);
-
 });
 
 // --- ADD CRUDE ROUTES BELOW ---
