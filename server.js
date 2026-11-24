@@ -91,6 +91,14 @@ app.put('/tasks/:id', (req, res) => {
 
 // --- ADD CRUDE ROUTES BELOW ---
 
+//Delete a task by ID
+app.delete ('/tasks/:id', (req,res)=>{
+const index =tasks.findIndex(t =>t.id=== req.params.id);
+if(index=== -1) {return res.status(404).json ({message: 'Task not found'});}
+
+const deletedTask =tasks.splice(index, 1)[0];
+res.status(200).json ({message:'Task deleted successfully', task:deletedTask});
+});
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
